@@ -1,0 +1,20 @@
+## Iterators
+------------
+- Iterators are defined by an order and an end.
+- Check out the 'collections' modules!! They're a ton of good data structures available.
+- break up iterator and iterable, so that the iterators can be iterated separately, and have separate lives.
+
+## Generators
+-------------
+- generators yield rather than return items
+- generators _are_ iterators, where they run until each yield and then stop.
+- generators return themselves when you call 'iter(.)' on them
+- you can run code instead of simply accessing something from storage!!
+
+## Streams
+----------
+- Streams do not have state, and can be run over and over again.
+
+## Tools
+--------
+- Look at 'itertools' and 'functools' libraries!!

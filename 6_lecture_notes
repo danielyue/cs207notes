@@ -1,0 +1,38 @@
+Process Address Space
+---------------------
+
+To run a program, the compiled code must be loaded from disk into memory
+
+The memory is allocated into the Stack, the Heap, and some otehr areas for static variables.
+
+- assume fixed stack and heap. People make dynamic elements to increase security, but don't worry about this yet.
+- Heap is much larger than the Stack, since it stores all the stored data.
+	- Heap -- memory that you want to access after the function has returned.
+	- malloc() allocates memory on the heap
+		- system call, "Operating System, please give me X much memory"
+	- need to free memory (free(.)) for long running programs, else all the memory will leak away and the machine will crash.
+	- anything "pointer-ish" should be put on the stack
+	- need a way to keep track of functions that allocate memory, so it can be freed
+
+Python
+------
+a = 1;
+	- python objects are allocated on the heap.
+	- ints are essentially C structures, which are a fancy way of packing data together
+	- lists in python are over-allocated, to allow for a few appends at low cost.
+	- append is costly if the data has already not been allocated
+
+
+typedef struct DArray {
+    int upto;
+    int size;
+    int *array;
+} DArray;
+
+is equivalent to ...
+
+struct DArray {
+    int upto;
+    int size;
+    int *array;
+} typedef struct DArray DArray;

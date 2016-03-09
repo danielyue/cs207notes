@@ -1,0 +1,37 @@
+// is integer division in python
+
+
+#there are problems in this code, but later
+def binary_search(da_array, needle):
+    rangemin = 0
+    rangemax = len(da_array) - 1
+    tries=0
+    while True:
+        print("at top", rangemin, rangemax)
+        if tries > len(da_array):
+            print("No Success")
+            break
+        midpoint = (rangemin+rangemax)//2 #whats the problem with this
+        print(rangemin, midpoint, rangemax, "|", da_array[midpoint], needle)
+        if da_array[midpoint] > needle:#lower part
+            rangemax = midpoint - 1
+        elif da_array[midpoint] < needle:
+            rangemin = midpoint + 1
+        else:
+            return midpoint
+        tries += 1
+
+- The problem with the above is that we need to avoid numerical overflow
+- Requires a sequence (defined length, indexable)
+- needs to have a defined order on the members of the sequence
+- can put strings anywhere in python, and it will ignore it.
+
+===========================================
+
+from pydoc import doc as pydoc
+from doctest import run_docstring_examples as dtest
+
+?function -> gives the documentation on a specific function
+pydoc(.) does the same thing
+
+docTests --> scans for python prompts ">>>" and runs those commands to test system

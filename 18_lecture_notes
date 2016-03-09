@@ -1,0 +1,46 @@
+# today---python packages
+-------
+
+- same ideas apply to other languages
+- how to use these packages
+- how to make them
+
+## different parts of a packages
+-------
+- Environment
+- Environment implementation
+- Parser
+- Evaluator
+- Drive to run the code
+- Tests
+
+## Pyscaffold
+----------
+- automates generating python package scaffolding
+- setup.py file 'hooks into everything'
+- project_name/project_name/ directory holds the folders
+- requirements.txt states the packages that must be installed to run the package successfully
+
+- __init__.py file are necessary for the function of the package, even if they are empty.
+
+python setup.py develop  <-- installs this program into the bin/
+pip install ... (equivalent)
+
+'hash -r' updates the cache of executables to make sure that its up to date.
+
+
+add version tags: git tag 0.0.1
+(make sure the __init__.py updates the version)
+
+can upload tar.gz files directly to pip for others to install
+
+what does
+'#! /usr/bin' or something like that at the start of a file do?
+
+pip puts the file in the working environment's bin/
+
+.name (. tells python that it wants to import from the _same_ package, NOT the file that you are working in)
+
+lang.py creates a command line program
+
+http://peterdowns.com/posts/first-time-with-pypi.html -- upload your file to pip!

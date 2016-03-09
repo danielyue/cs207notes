@@ -1,0 +1,47 @@
+Hashing in Python
+(first half in iPython Notebooks)
+
+Problem 1:
+- hashing can assign elements to the same place. Need 'collision resolution'.
+
+Python Dictionaries:
+- Objects that act like dictionaries
+- Objects that can act as keys for dictionaries
+
+Ordering of a python dictionary is dependent on a machine, so python calls it
+'undefined'
+
+Lists and Dicts are not valid dictionary keys, because they do not have a
+defined __hash__() function.
+
+
+===============================================
+class MutableClass:
+    def __init__(self, init):
+        self.v = init
+    def set(self, new):
+        self.v = new
+    def __repr__(self):
+        return '<MutableClass: '+str(self.v)+'>'
+
+This can function as a dictionary key because it inherits implementations of
+__hash__() and __eq__() from the python Object Class. Keys need to have a
+consistent hash, even if they are mutable (like the above example).
+
+===============================================
+
+Hash function design:
+- want it to have uniform distribution across domain of possible keys
+- compound keys -> f('fox') = f('x',f('o',f('f',\phi))), where \phi is the
+    identity function
+
+
+Collision Resolution:
+- Insertion
+- Retrieval
+- Deletion
+
+Method 1: Use a list of linked list nodes.
+Method 2: Linear probing (if collision, move over to the next one)
+- deletion is more difficult, because you have to flag the areas that formerly
+    had an element but no longer do.

@@ -1,0 +1,52 @@
+Why do we want objects?
+- they are a strong form of abstraction.
+- both convenient and fundamental
+	- conveniently hides underlying complexity
+	- fundamental because systems of large scale cannot be made without abstraction.
+
+A language has 3 parts:
+- expressions and statements: how to structure simple computations
+- means of combination: how to structure complex computations
+- means of abstraction: how to build complex units
+
+python 
+	--> string.format() -> allows for substitution of variables into the string.
+	--> tuples are immutable in python.
+
+
+========================
+class ComplexClass():
+    
+    def __init__(self, a, b):
+        self.real = a
+        self.imaginary = b
+========================
+
+__func__ <-- constructor function in python
+
+	def make_sound():
+		raise NotImplementedError <-- used to specify interface for later inheritance and specificiation
+
+use 'pass' <-- uses the interfaces functions already.
+
+'duck-typing': agreement to have a specific method defined. Doesn't require use of the same object.
+
+The moment that you define the dunders for __getitem__ and __len__, the object is a sequence.
+	- get item handles indexing (e.g. a[0])
+	- length gives the number of objects within.
+
+@classmethod <--- Methods that can be called without a specific instance made.
+
+========================
+class ComplexClass():
+    def __init__(self, a, b):
+        self.real = a
+        self.imaginary = b
+        
+    @classmethod
+    def make_complex(cls, a, b):
+        return cls(a, b)
+========================
+
+- class method creates a decorator that passes a reference to the type definition as the first argument ('cls').
+

@@ -1,0 +1,41 @@
+d[67:98]
+
+returns 'slice(67, 98, None)'
+
+when the type defined is alreday an iterator, (max, min functions work already)
+
+
+iterator
+--------
+
+accessing things in order. more basic than the sequence protocol in python
+
+for loop implementation:
+------------------------
+for i in a:
+    print(i)
+
+iterator implementation:
+------------------------
+it = iter(a)
+while True:
+    try:
+        nextval = next(it)
+        print(nextval)
+    except StopIteration:
+        del it
+        break
+
+Rules
+(1) if __iter__ is defined, calls that to implement an iterator.
+(2) if not  __getitem__ starting from index 0 // this could be deprecated in future versions of python
+(3) otherwise raise TypeError
+
+
+An ITERATOR defines __next__ and __iter__
+An ITERABLE defines __iter__
+They are not implemented as the same thing so that each iterator is required to store it's own index.
+
+
+"""Difference between flat sequences and container sequences"""
+Container sequences hold references to the objects they contain, which may be of any type, while flat sequences physically store the value of each item within its own memory space, and not as distinct objects. Thus, flat sequences are more compact, but they are limited to holding primitive values like characters, bytes, and numbers.

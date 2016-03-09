@@ -1,0 +1,33 @@
+Git notes
+
+// add all elements to the commit and commit
+git add . 
+git commit -am "message here"
+
+// add a branch and switch to it
+git checkout -b __branchName__
+
+// switch to an existing branch
+git checkout __branchName__
+
+// merge branch1 to active branch
+git merge __branch1__
+
+// revert to previous version of history, deleting current branch
+git reset --hard __SHAHashOfCommit_9char__
+
+// origin/HEAD is where the remote "origin" is up to date. origin/master is the where the remote "origins"'s 'master' branch is located. You can check out branches of the 'origin' remote as well.
+
+// git stash allows you to save current changes
+git stash
+
+// get them back
+git stash pop
+
+// move current branch to another branch _otherBranch_
+git rebase _otherBranch_
+
+// move 
+
+// move commits to front of the current branch
+git cherry-pick __SHAHashOfCommitOrBranchHead__ __SHAHashOfCommitOrBranchHead__ ...
